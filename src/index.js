@@ -16,7 +16,7 @@ function generateData(event) {
     let instructions = document.querySelector("#submit-form-input");
 
     let prompt = instructions.value;
-    let context = `Generate a short, 4-line poem about ${prompt}. Separate each line with a <br>`;
+    let context = `Think of a short recipes so anyone can try at home. Write a recipe containing ${prompt} ingredient.Separate each ingredient with a <br> to show them as a list, and separate each recipe step with a <br> as well.`;
     let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
     axios.get(apiUrl).then(displayData);
