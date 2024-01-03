@@ -31,6 +31,9 @@ h1{
     padding: 30px;
 
     .search-form{
+        border-bottom: 1px solid $items;
+        padding-bottom: 20px;
+
         .btn{
             background-color: $accent;
             border: 1px solid $accent;
@@ -42,8 +45,13 @@ h1{
     }
 
     .data{
-        margin-top: 20px;
+        margin-top: 30px;
+        padding: 10px;
+        font-size: 14px;
+        line-height: 1.5;
         color: $accent-darker;
+        text-align: justify;
+        text-justify: inter-word;
     }
 }
 
