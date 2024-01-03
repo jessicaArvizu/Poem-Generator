@@ -1,0 +1,56 @@
+/* Colors */
+$black: #0C131E;
+$text: #023246;
+$items: #D4D4CE;
+$accent: #287094;
+$accent-darker: #205976;
+$white: #F6F6F6;
+
+body {
+    background-color: $white;
+    color: $black;
+}
+
+a {
+    color: $accent;
+    font-weight: bold;
+
+    &:visited{
+        color: $accent-darker;
+    }
+}
+
+h1{
+    color: $text;
+}
+
+.main-container {
+    max-width: 600px;
+    margin: 100px auto;
+    border-radius: 16px;
+    padding: 30px;
+
+    .search-form{
+        .btn{
+            background-color: $accent;
+            border: 1px solid $accent;
+            width: 100%;
+        }
+        .form-control{
+            width: 100%;
+        }
+    }
+
+    .data{
+        margin-top: 20px;
+        color: $accent-darker;
+    }
+}
+
+footer {
+    margin-top: 30px;
+    border-top: 1px solid $items;
+    padding: 30px 0 0 0;
+    text-align: center;
+    font-size: 12px;
+}
