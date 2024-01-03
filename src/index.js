@@ -1,11 +1,25 @@
-function generateData(event) {
-    event.preventDefault();
+let apiKey = "d09a0fd0aaod658935ba4280ebb33t01";
+
+function displayData(response) {
+    console.log(response.data.answer)
     new Typewriter("#data", {
-        strings: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        strings: response.data.answer,
         autoStart: true,
         cursor: null,
         delay: 20,
     });
+}
+
+function generateData(event) {
+    event.preventDefault();
+
+    let instructions = document.querySelector("#submit-form-input");
+
+    let prompt = instructions.value;
+    let context = `Generate a short, 4-line poem about ${prompt}. Separate each line with a <br>`;
+    let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+    axios.get(apiUrl).then(displayData);
 }
 
 
